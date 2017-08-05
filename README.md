@@ -39,5 +39,29 @@
     ## To run first need to build to create dist folder
         ng b
 
+    ## [Azure cli install](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+        curl -L https://aka.ms/InstallAzureCli | bash
+
+        -if error use sudo, and might ask you to accept license for xcode
+    ## az login
+        -Take code and go to https://aka.ms/devicelogin to log in
+
+        once you finish log in you will see login in the command line.
+
+    ## create resource group
+        -n name
+        -l location
+        az group create -n my-heroes-db-group -l "East US"
+
+        once resource group created. create db
+
+    ## create db
+            -n database name
+            -g created group name
+            --kind database type
+        az cosmosdb create -n my-cosmos-heroes -g my-heroes-db-group --kind MongoDB
+
+
+
     
 
