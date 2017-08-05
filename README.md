@@ -59,7 +59,23 @@
             -n database name
             -g created group name
             --kind database type
-        az cosmosdb create -n my-cosmos-heroes -g my-heroes-db-group --kind MongoDB
+        az cosmosdb create -n my-cosmos-heroes-db -g my-heroes-db-group --kind MongoDB
+
+    ## connect angular with cosmoDB
+        install mongoose
+        npm i mongoose --save
+
+    ## create mongo.js
+
+    ## create env/enviroment.js
+
+        ## To get enviromental values
+            az cosmosdb list-connection-strings -n my-cosmos-heroes-db -g my-heroes-db-group --query "connectionStrings[0].connectionString"
+
+            // "mongodb://xxxxxxxx:gggggggg@my-cosmos-heroes-db.documents.azure.com:10255/?ssl=true"
+            
+            // const mongoUri = `mongodb://${env.dbName}:${env.key}@${env.dbName}.documents.azure.com:${env.cosmosPort}/?ssl=true`; //&replicaSet=globaldb`;
+    ## create hero.js server side
 
 
 
